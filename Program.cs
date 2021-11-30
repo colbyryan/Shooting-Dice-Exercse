@@ -8,8 +8,15 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
-            Player player1 = new Player();
+            Player player1 = new OneHigherPlayer();
             player1.Name = "Bob";
+
+            Player player4 = new SmackTalkingPlayer();
+            player4.Name = "Brady";
+
+            player1.Play(player4);
+
+            Console.WriteLine("-------------------");
 
             Player player2 = new Player();
             player2.Name = "Sue";
@@ -33,7 +40,7 @@ namespace ShootingDice
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, player4, large
             };
 
             PlayMany(players);
